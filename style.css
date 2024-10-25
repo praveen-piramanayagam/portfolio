@@ -1,6 +1,70 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Revalia&display=swap");
 
+/* Scrolling wrapper styles */
+.scrolling-wrapper {
+  display: flex;
+  overflow-x: hidden; /* Hide scrollbar */
+  scroll-behavior: smooth; /* Smooth horizontal scrolling */
+  padding: 20px 0; /* Padding for visual spacing */
+  width: 100%; /* Full width for responsiveness */
+  scroll-snap-type: x mandatory; /* Snap scrolling */
+}
+
+/* Card styles */
+.card {
+  flex: 0 0 45%; /* Each card takes 45% of the container */
+  margin: 0 10px; /* Spacing between cards */
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  padding: 20px;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px); /* Lift the card slightly on hover */
+}
+
+/* Image box styles */
+.box img {
+  width: 100%; /* Full width */
+  height: 250px; /* Consistent height for all images */
+  object-fit: cover; /* Ensure images fit properly */
+  border-radius: 10px;
+}
+
+/* Dot navigation styles */
+.dots {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.dot {
+  height: 15px;
+  width: 15px;
+  margin: 0 5px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.dot.active {
+  background-color: #717171;
+}
+
+/* For mobile responsiveness */
+@media (max-width: 768px) {
+  .card {
+      flex: 0 0 90%; /* Take up more space on smaller screens */
+  }
+}
+
+
+
 /* CSS * Selector, Select all elements */
 * {
   margin: 0;
@@ -370,7 +434,7 @@ section .title::after {
 }
 
 /* Project section styling */
-.projects .title::after {
+/* .projects .title::after {
   content: "check my work";
 }
 .projects .carousel .card {
@@ -430,7 +494,7 @@ section .title::after {
 .owl-dot.active,
 .owl-dot:hover {
   background: crimson !important;
-}
+} */
 
 /* contact section styling */
 .contact .title::after {
