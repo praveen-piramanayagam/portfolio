@@ -1,3 +1,26 @@
+function scrollToSlide(slideIndex) {
+  const wrapper = document.querySelector('.scrolling-wrapper');
+  const cardWidth = wrapper.querySelector('.card').offsetWidth + 20; // Card width + margin
+
+  // Check screen width
+  if (window.innerWidth <= 768) {
+      // Mobile: Scroll one card per dot
+      wrapper.scrollLeft = slideIndex * cardWidth;
+  } else {
+      // Desktop: Scroll two cards per dot
+      wrapper.scrollLeft = slideIndex * cardWidth * 2;
+  }
+
+  // Update active dot
+  const dots = document.querySelectorAll('.dot');
+  dots.forEach(dot => dot.classList.remove('active'));
+  dots[slideIndex].classList.add('active');
+}
+
+
+
+
+
 $(document).ready(function () {
     // Scroll down sticky navbar script start
     $(window).scroll(function () {
